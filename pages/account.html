@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil Akun Duitin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
+  </head>
+  <body class="bg-red-50 min-h-screen">
+    <!-- Navbar -->
+    <header
+      class="bg-white shadow-sm py-4 px-6 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <i class="fa-solid fa-wallet text-red-600 text-2xl"></i>
+        <span class="text-2xl font-bold text-red-600">Duitin</span>
+      </div>
+      <nav class="flex gap-6">
+        <a href="dashboard.html" class="hover:text-red-600 font-semibold"
+          >Dashboard</a
+        >
+        <a href="#" class="hover:text-red-600 font-semibold">Transaksi</a>
+        <a href="#" class="hover:text-red-600 font-semibold">Top Up</a>
+        <a href="account.html" class="hover:text-red-600 font-semibold"
+          >Profil</a
+        >
+        <a
+          href="login.html"
+          class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 font-semibold shadow"
+          >Logout</a
+        >
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-xl mx-auto py-10 px-4">
+      <section
+        class="bg-white rounded-xl shadow p-8 flex flex-col items-center">
+        <div class="mb-4">
+          <img
+            src="https://ui-avatars.com/api/?name=Guntur+Lailam&background=ef4444&color=fff&size=128"
+            alt="Avatar"
+            class="rounded-full shadow-lg" />
+        </div>
+        <h2 class="text-2xl font-bold text-red-600 mb-1">Guntur Lailam</h2>
+        <p class="text-gray-600 mb-4">gunturlailam@email.com</p>
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-red-50 rounded-lg p-4 text-center">
+            <div class="text-gray-500 text-sm mb-1">Saldo</div>
+            <div class="text-xl font-bold text-red-600">Rp 2.500.000</div>
+          </div>
+          <div class="bg-red-50 rounded-lg p-4 text-center">
+            <div class="text-gray-500 text-sm mb-1">Transaksi</div>
+            <div class="text-xl font-bold text-red-600">15</div>
+          </div>
+        </div>
+        <a
+          href="#"
+          class="bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition shadow"
+          >Edit Profil</a
+        >
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-6 text-center mt-10">
+      <div class="container mx-auto px-6">
+        <div
+          class="flex flex-col md:flex-row items-center justify-between gap-6 py-4">
+          <div class="mb-4 md:mb-0">
+            <h4 class="text-lg font-bold text-white mb-2">Duitin E-Wallet</h4>
+            <p class="text-gray-300 text-sm">
+              Solusi transaksi digital aman dan mudah.
+            </p>
+          </div>
+          <div>
+            <p class="mb-2 text-gray-200 font-semibold">Ikuti Kami</p>
+            <div class="flex gap-4">
+              <a
+                href="#"
+                class="text-white hover:text-red-400 text-2xl transition"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="#"
+                class="text-white hover:text-red-400 text-2xl transition"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="#"
+                class="text-white hover:text-red-400 text-2xl transition"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="#"
+                class="text-white hover:text-red-400 text-2xl transition"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-gradient-to-r from-red-600 to-red-800 py-3 mt-6">
+        <p class="text-center text-white text-sm">
+          &copy; 2025 Duitin. Semua Hak Dilindungi.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
