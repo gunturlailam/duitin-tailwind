@@ -1,11 +1,292 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="src/output.css" rel="stylesheet" />
+    <title>Duitin - E-Wallet Masa Kini</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#fff", // merah
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      rel="stylesheet"
+      href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var navToggle = document.getElementById("nav-toggle");
+        var navMenu = document.getElementById("nav-menu");
+        var navClose = document.getElementById("nav-close");
+        if (navToggle && navMenu) {
+          navToggle.addEventListener("click", function () {
+            navMenu.classList.remove("hidden");
+          });
+        }
+        if (navClose && navMenu) {
+          navClose.addEventListener("click", function () {
+            navMenu.classList.add("hidden");
+          });
+        }
+        navMenu &&
+          navMenu.addEventListener("click", function (e) {
+            if (e.target === navMenu) navMenu.classList.add("hidden");
+          });
+      });
+    </script>
   </head>
-  <body>
-    <h1 class="text-4xl font-bold text-blue-500">Judul</h1>
+  <body class="bg-red-50 text-gray-800">
+    <!-- Navbar -->
+    <header class="bg-white shadow-sm fixed w-full z-10">
+      <div
+        class="container mx-auto px-6 py-4 flex items-center justify-between">
+        <a
+          href=""
+          class="text-2xl font-bold text-red-600 flex items-center gap-2">
+          <i class="fa-solid fa-wallet"></i> Duitin
+        </a>
+        <!-- Hamburger Button (Mobile) -->
+        <button
+          id="nav-toggle"
+          class="md:hidden text-red-600 text-2xl focus:outline-none">
+          <i class="fas fa-bars"></i>
+        </button>
+        <!-- Nav Menu Desktop -->
+        <nav class="hidden md:flex gap-6">
+          <a href="#about" class="hover:text-red-600">Tentang</a>
+          <a href="#features" class="hover:text-red-600">Fitur</a>
+          <a href="#testimoni" class="hover:text-red-600">Testimoni</a>
+        </nav>
+        <div class="hidden md:flex items-center gap-4">
+          <a
+            href="#cta"
+            class="bg-red-600 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-lg hover:bg-red-700 font-semibold shadow text-sm md:text-base"
+            >Daftar</a
+          >
+          <a
+            href="#cta"
+            class="bg-white text-red-600 border border-red-600 px-3 py-1.5 md:px-4 md:py-2 rounded-lg hover:bg-red-50 hover:text-red-700 font-semibold shadow text-sm md:text-base"
+            >Login</a
+          >
+        </div>
+      </div>
+      <!-- Mobile Nav Menu -->
+      <div
+        id="nav-menu"
+        class="md:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-60 z-50 hidden">
+        <div class="bg-white w-3/4 max-w-xs h-full p-6 flex flex-col gap-6">
+          <button id="nav-close" class="self-end text-red-600 text-2xl mb-4">
+            <i class="fas fa-times"></i>
+          </button>
+          <a
+            href="#about"
+            class="block py-2 px-4 rounded hover:bg-red-50 hover:text-red-600 font-semibold"
+            >Tentang</a
+          >
+          <a
+            href="#features"
+            class="block py-2 px-4 rounded hover:bg-red-50 hover:text-red-600 font-semibold"
+            >Fitur</a
+          >
+          <a
+            href="#testimoni"
+            class="block py-2 px-4 rounded hover:bg-red-50 hover:text-red-600 font-semibold"
+            >Testimoni</a
+          >
+          <a
+            href="#cta"
+            class="block py-1.5 px-3 rounded bg-red-600 text-white font-semibold shadow hover:bg-red-700 text-sm"
+            >Daftar</a
+          >
+          <a
+            href="#cta"
+            class="block py-1.5 px-3 rounded border border-red-600 text-red-600 font-semibold shadow hover:bg-red-50 hover:text-red-700 text-sm"
+            >Login</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      class="pt-32 pb-20 bg-gradient-to-b from-red-600 to-red-800 text-white">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-red-100">
+          Satu Aplikasi, Semua Transaksi
+        </h2>
+        <p class="text-lg mb-8 max-w-2xl mx-auto">
+          Duitin adalah e-wallet yang memudahkan pembayaran, transfer, dan
+          belanja dengan cepat, aman, dan praktis.
+        </p>
+        <div class="flex justify-center gap-4">
+          <a
+            href="#cta"
+            class="bg-white text-red-600 font-semibold px-6 py-3 rounded-lg hover:bg-red-100 border border-red-600 shadow"
+            >Daftar Sekarang</a
+          >
+          <a
+            href="#features"
+            class="bg-red-500 font-semibold px-6 py-3 rounded-lg hover:bg-red-600 text-white shadow"
+            >Pelajari Lebih Lanjut</a
+          >
+        </div>
+      </div>
+    </section>
+    <!-- About -->
+    <section id="about" class="py-16 bg-white">
+      <div class="container mx-auto px-6 text-center">
+        <h3 class="text-3xl font-bold text-red-600 mb-6">Tentang Duitin</h3>
+        <p class="text-lg text-gray-700 max-w-2xl mx-auto mb-6">
+          Duitin adalah e-wallet karya anak bangsa yang hadir untuk memudahkan
+          transaksi digital Anda. Dengan teknologi terbaru, Duitin menawarkan
+          kemudahan, keamanan, dan kecepatan dalam setiap pembayaran, transfer,
+          dan pengelolaan keuangan. Kami berkomitmen untuk memberikan layanan
+          terbaik agar Anda bisa fokus pada hal yang penting dalam hidup.
+        </p>
+        <div class="flex flex-col md:flex-row justify-center gap-8 mt-8">
+          <div class="bg-red-50 rounded-lg p-6 shadow text-left md:w-1/3">
+            <h4 class="text-xl font-semibold text-red-600 mb-2">Misi Kami</h4>
+            <p class="text-gray-700">
+              Membantu masyarakat Indonesia bertransaksi dengan aman, mudah, dan
+              efisien di era digital.
+            </p>
+          </div>
+          <div class="bg-red-50 rounded-lg p-6 shadow text-left md:w-1/3">
+            <h4 class="text-xl font-semibold text-red-600 mb-2">Keunggulan</h4>
+            <p class="text-gray-700">
+              Teknologi enkripsi, layanan 24/7, dan dukungan merchant luas di
+              seluruh Indonesia.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="py-20 bg-red-50">
+      <div class="container mx-auto px-6">
+        <h3 class="text-3xl font-bold text-center mb-12">
+          Fitur Unggulan Duitin
+        </h3>
+        <div class="grid md:grid-cols-3 gap-10">
+          <div
+            class="bg-white shadow-md rounded-xl p-6 text-center hover:shadow-lg transition">
+            <div class="text-red-600 text-5xl mb-4">💳</div>
+            <h4 class="text-xl font-semibold mb-2 text-red-600">
+              Transfer Instan
+            </h4>
+            <p>
+              Kirim dan terima uang dalam hitungan detik, tanpa biaya
+              tersembunyi.
+            </p>
+          </div>
+          <div
+            class="bg-white shadow-md rounded-xl p-6 text-center hover:shadow-lg transition">
+            <div class="text-red-600 text-5xl mb-4">🔒</div>
+            <h4 class="text-xl font-semibold mb-2 text-red-600">
+              Keamanan Tingkat Tinggi
+            </h4>
+            <p>Transaksi aman dengan enkripsi canggih dan verifikasi PIN.</p>
+          </div>
+          <div
+            class="bg-white shadow-md rounded-xl p-6 text-center hover:shadow-lg transition">
+            <div class="text-red-600 text-5xl mb-4">🏪</div>
+            <h4 class="text-xl font-semibold mb-2 text-red-600">
+              Pembayaran Merchant
+            </h4>
+            <p>Bayar di berbagai toko dan layanan cukup dengan scan QR.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimoni -->
+    <section id="testimoni" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <h3 class="text-3xl font-bold text-center mb-12 text-red-600">
+          Apa Kata Pengguna?
+        </h3>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+            <p class="mb-4 italic">
+              "Duitin bikin hidup saya lebih praktis. Transfer dan bayar tagihan
+              jadi super cepat!"
+            </p>
+            <h4 class="font-semibold">– Budi, Freelancer</h4>
+          </div>
+          <div
+            class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+            <p class="mb-4 italic">
+              "Aplikasinya simpel dan aman. Cocok buat semua orang."
+            </p>
+            <h4 class="font-semibold">– Siti, Mahasiswa</h4>
+          </div>
+          <div
+            class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+            <p class="mb-4 italic">
+              "Promo merchantnya banyak! Hemat banget tiap belanja."
+            </p>
+            <h4 class="font-semibold">– Andi, Karyawan</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-6 text-center">
+      <div class="container mx-auto px-6">
+        <div
+          class="flex flex-col md:flex-row items-center justify-between gap-6 py-4">
+          <div class="mb-4 md:mb-0">
+            <h4 class="text-lg font-bold text-white mb-2">Duitin E-Wallet</h4>
+            <p class="text-gray-300 text-sm">
+              Solusi transaksi digital aman dan mudah.
+            </p>
+          </div>
+          <div>
+            <p class="mb-2 text-gray-200 font-semibold">Ikuti Kami</p>
+            <div class="flex gap-4">
+              <a
+                href="#"
+                class="text-white hover:text-red-400 text-2xl transition"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="#"
+                class="text-white hover:text-red-400 text-2xl transition"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="#"
+                class="text-white hover:text-red-400 text-2xl transition"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="#"
+                class="text-white hover:text-red-400 text-2xl transition"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-gradient-to-r mt-6 md:ml-0 py-3">
+        <p class="text-white text-sm">
+          &copy; 2025 Duitin. Semua Hak Dilindungi.
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
