@@ -58,4 +58,17 @@
       </div>
     </div>
   </body>
+
+  <script>
+    var afterLogin = document.querySelector("form");
+    afterLogin.addEventListener("submit", function (event) {
+      event.preventDefault();
+      showCustomAlert();
+    });
+
+    function showCustomAlert() {
+      alert("Login successful! Redirecting to dashboard...");
+      window.location.href = "dashboard.html"; // Redirect to dashboard page
+    }
+  </script>
 </html>
